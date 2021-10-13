@@ -16,7 +16,7 @@ int main()
     int sec_in_day = 24 * sec_in_hour;
     long long sec_in_year = 365 * sec_in_day;
     int years;
-    years = 1000;
+    years = 100;
     long long total = years * sec_in_year;
 
 }

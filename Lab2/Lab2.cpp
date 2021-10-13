@@ -10,6 +10,10 @@
 int main(void) {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	/*	char name1[3], name2[4], name3[2];
+	char sc1[3], sc2[3], sc3[4];
+	float cnt1, cnt2, cnt3;
+	int sq1, sq2, sq3;*/
 
 	char name1[3] = "Тр", name2[4] = "Т-с", name3[2] = "А";
 	char sc1[3] = "12", sc2[3] = "17", sc3[4] = "12а";
