@@ -7,7 +7,7 @@ int main()
 {
     int x = 1; // x=1
     int y = 2; // y=2
-    int z3 = 0; // 3 peremennaya 
+    int z3; // 3 peremennaya 
     z3 = x; // z=1
     x = y; // x=2
     y = z3; // y=1

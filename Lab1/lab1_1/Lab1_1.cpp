@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-
+  
 int main()
 {
     int a1 = sizeof(int);
