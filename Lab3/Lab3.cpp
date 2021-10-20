@@ -20,7 +20,8 @@ int main(void) {
 	double a = 10, b = 5;
 	double t1, t2;   /* результаты */
 	double ax; /* рабочая переменная */
-	while (1) {
+	while (1) 
+	{
 		printf("\n");
 		printf("Ведите значение x>0 >\t");
 		scanf("%lf", &x);
@@ -39,7 +40,8 @@ int main(void) {
 			/* t2 = 1 / (2 * sqrt(2) * a) + (3 * pow(sin(ax-1), 2)) / (pow(sin(ax-1), 2)); */
 			printf("t2=%lg\n", t2);
 		}
-		else {
+		else 
+		{
 			printf("\nОшибка\n");
 			printf("Введите значение x и y в обозначенных пределах\n");
 		}
