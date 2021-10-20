@@ -30,13 +30,13 @@ int main(void) {
 		ax = a * x;
 		if ((x > 0) & (y > 0))
 		{
-			t1 = (1 / pow(b, 3)) * ((pow(a, 2)) * (log(y / x)) + ((2 * ax) / y) + ((pow(y, 2)) / 2 * (pow(x, 2))));
+			t1 = 1 / pow(b, 3) * (pow(a, 2) * log(y / x) + (2 * ax) / y + (pow(y, 2) / 2 * (pow(x, 2))));
 			printf("t1=%lg\n", t1);
 
 			ax = (ax * 3.14) / 180;
 
-			t2 = (1 / (2 * sqrt(2) * a)) + ((3 * (pow(sin(ax), 2)) - 1)) / ((pow(sin(ax), 2)) - 1);
-			/* t2 = (1 / (2 * sqrt(2) * a)) + (3 * (pow(sin(ax-1), 2)) / (pow(sin(ax-1), 2)); */
+			t2 = 1 / (2 * sqrt(2) * a) + (3 * (pow(sin(ax), 2)) - 1) / (pow(sin(ax), 2) - 1);
+			/* t2 = 1 / (2 * sqrt(2) * a) + (3 * pow(sin(ax-1), 2)) / (pow(sin(ax-1), 2)); */
 			printf("t2=%lg\n", t2);
 		}
 		else {
