@@ -9,11 +9,11 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int tasks;
-    int cycle;
-    int answer;
-    int grade = 0;
-    int grade5;
+    int tasks; /*количество примеров*/
+    int cycle; /*цикл*/
+    int answer; /*ответ пользователя*/
+    int grade = 0; /*количество правильных ответов*/
+    int grade5; /*оценка по пятибалльной системе*/
     printf("Введите количество примеров, которое хотите решить: \n");
     scanf("%d", &tasks);
     system("cls");
