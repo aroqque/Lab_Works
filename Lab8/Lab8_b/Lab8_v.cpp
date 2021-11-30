@@ -24,7 +24,8 @@ int main()
     k = number;
     while (number < 2147483647) 
     {
-        while (number > 0) {
+        while (number > 0) 
+        {
             Arr[i] = number % 10;
             number /= 10;
             digits++;

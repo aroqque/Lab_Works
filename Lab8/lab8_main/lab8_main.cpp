@@ -2,10 +2,58 @@
 //
 
 #include <iostream>
+#include "windows.h"
+#include <cmath>
+
+int Ar[200];
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    srand(time(NULL));
+    double avg;
+    int counter;
+    int i, j, min, max;
+    printf("\nНачальный массив:\n");
+    for (i = 0; i < 200; i++) 
+    {
+        Ar[i] = rand() % 200 - 100;
+        printf("%d ", Ar[i]);
+    }
+    for (i = 0; i < 200; i++)
+    {
+        if (Ar[i] >= 0)
+        {
+            min = i;
+            max = i;
+            for (j = i, counter = 0, avg = 0; Ar[j] >= 0 && j < 200; j++, counter++)
+            {
+                if (Ar[min] > Ar[j]) // находим элемент с минимальным значением в последовательности и сохраняем его индекс
+                {
+                    min = j;
+                }
+                if (Ar[max] < Ar[j]) // находим элемент с максимальным значением в последовательности и сохраняем его индекс
+                {
+                    max = j;
+                }
+                avg += Ar[j];
+            }
+            avg /= counter; //Сумму всех элементов последовательности делим на их количество 
+            avg = round(avg);
+            Ar[min] = avg; //Заменяем минимальное на среднее
+            Ar[max] = avg; //Заменяем максимальное на среднее 
+            i = j;
+        }
+    }
+    printf("\n\nМассив Результат:\n"); //Вывод результата
+    for (i = 0; i < 200; i++) 
+    {
+        printf("%d ", Ar[i]);
+    }
+    printf("\n\n");
+    system("pause");
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
