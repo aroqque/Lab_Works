@@ -5,6 +5,8 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#define N 3
+#define M 3
 using namespace std;
 
 void fun(int mas1[]);
@@ -12,22 +14,26 @@ int main()
 {
     srand(time(NULL));
     setlocale(0, "rus");
-    const int N = 3, M = 3;
     int mas1[9];
     for (int i = 0; i <= 9; i++)
     {
-        mas1[i] = (rand() % 9) + 1; //создадим одномерный рандомный массив
+        mas1[i] = (rand() % 9+1); //создадим одномерный рандомный массив
     }
     cout << "Одномерный массив:\n";
     for (int i = 0; i < N * M; i++)
         cout << setw(4) << mas1[i];
     cout << endl;
-
-    void fun(int mas1[]);
+    fun(mas1);
+    cout << "\nОдномерный массив после преобразования:\n";
+    for (int i = 0; i < N * M; i++)
+        cout << setw(4) << mas1[i];
+    
+}
+    void fun(int mas1[])
     {
         int mas2[N][M];
         cout << "\nДвухмерный массив из одномерного: \n";
-        for (int i = 0; i < N; i++)               //умножим на случайное число ниже
+        for (int i = 0; i < N; i++)               //из одноменого делаем двухмерный
         {
             for (int j = 0; j < M; j++)
             {
@@ -39,7 +45,7 @@ int main()
         int r = 0;
         for (int i = 0; i < N; i++)
         {
-            r = rand() % 9 + 1;
+            r = rand() % 9 + 1;            //умножим на случайное число ниже
             for (int j = 0; j < M; j++)
                 mas2[i][j] *= r;
         }
@@ -50,14 +56,10 @@ int main()
                 cout << mas2[i][j] << " ";
             cout << endl;
         }
-        for (int i = 0; i < N; i++)
-            for (int j = 0; j < M; j++)
+        for (int i = 0; i < N; i++)                 //переведем новый двухмерный массив в одномерный
+            for (int j = 0; j < M; j++)             
                 mas1[i * M + j] = mas2[i][j];
-        cout << "\nОдномерный массив после преобразования:\n";//переведем новый двухмерный массив в одномерный 
-        for (int i = 0; i < N * M; i++)
-            cout << setw(4) << mas1[i];
     }
-}
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
