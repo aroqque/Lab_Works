@@ -16,7 +16,7 @@ int func(int mas[], int N, int max)
 
 int main()
 {
-	int mas[] = { 81,53,56,5,72,11 };
+	int mas[] = { 81,53,95,56,5,72,11 };
 	const int N = sizeof(mas) / sizeof(int);
 	int max = INT_MIN;
 	cout << "Max: " << func(mas, N - 1, max) << "\n";
