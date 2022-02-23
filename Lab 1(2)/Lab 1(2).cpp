@@ -29,7 +29,7 @@ void input(int N, table arr[])
 void random(int N, table arr[])
 {
     srand(time(0));
-    string symbol[3] = { "12","17","12a"}; // Выводиться 1 символ
+    string symbol[3] = { "12","17","12a"}; 
     string names[3] = { "Тр", "Т-с","А"};
     string sign[3] = { "27.55","13.6","57.3"};
     string kilom[3] = { "75","57","117" };
@@ -81,10 +81,10 @@ void sort(int N, table arr[])
 
 void print_menu()
 {
-    system("cls");  // очищаем экран
-    printf("Что мы будем делать?\n");
+    system("cls");
+    printf("Какое действие выполнить?\n");
     printf("1. Заполнить структуру вручную\n");
-    printf("2. Заполнить структуру рандомно\n");
+    printf("2. Заполнить структуру случайно\n");
     printf("3. Отсортировать структуру\n");
     printf("4. Расспечатать структуру\n");
     printf("5. Выход\n");
