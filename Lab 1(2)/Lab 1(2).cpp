@@ -67,12 +67,12 @@ void sort(int N, table arr[])
     struct table x;
     for (int i = 0; i < N - 1; i++)
     {
-    int m = i;
-    for ( int j = i + 1; j < N; j++)
+    int m = i; /* минимальный элемент - первый */
+    for ( int j = i + 1; j < N; j++)  /* если текущий элемент > минимального, он становится минимальным */
         if (strcmp(arr[m].name, arr[j].name) > 0) m = j;
     if (m > i)
     {
-        x = arr[i];
+        x = arr[i]; /* перестановка первого и минимального элементов */
         arr[i] = arr[m];
         arr[m] = x;
     }
