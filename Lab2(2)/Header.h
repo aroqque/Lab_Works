@@ -7,7 +7,7 @@
 #include "struct.h"
 
 #define _CRT_SECURE_NO_WARNINGS
-#define PRINT_TYPE
+//#define PRINT_TYPE
 #define DEBUG
 using namespace std;
 
