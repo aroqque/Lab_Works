@@ -45,7 +45,7 @@ void transfer(int* arr, int size,int* brr)
 		if (arr[i] > 3 && arr[i] < 8)
 		{
 			*(brr + i) = *(arr + i);
-			cout <<*(arr + i)<< "      "; // в цикле и выводиться много раз
+			cout <<*(arr + i)<< "      "; 
 		}
 
 	}
