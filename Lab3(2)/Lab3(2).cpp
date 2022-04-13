@@ -41,6 +41,7 @@ int main()
 		system("cls");
 
 		delete[] arr;
+		delete[] brr;
 	} while (answer != false);
 
 	return 0;
