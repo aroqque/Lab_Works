@@ -16,7 +16,6 @@ int count_words(const string& str) // считаем кол-во слов
         else
             word = true;
     }
-    //обработать конец строки
     if (word)
         count++;
 

@@ -4,8 +4,8 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    string str = "Привет парни! Как вы?";
-    const int target_len = 100; // указываем нужную нам длину 
+    string str = "Добрый вечер! Как вы?";
+    const int target_len = 50; // указываем нужную нам длину 
 
     string output;
     switch (stretch(output, str, target_len))
