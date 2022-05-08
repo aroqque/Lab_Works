@@ -165,8 +165,9 @@ void all_materials_print(char* fname)
     cout << ("|------------|------------|---------------|--------------|\n");
 
 
-    while (!feof(f)) {
-        fscanf(f, "%s  %s  %s  %s", &arr.name, &arr.sc, &arr.cnt, &arr.sq);
+    while (!feof(f))
+    {
+        //fscanf(f, "%s  %s  %s  %s", &arr.name, &arr.sc, &arr.cnt, &arr.sq);
         printf("| %-10s | %-10s | %-13s | %-12s |\n", arr.name, arr.sc, arr.cnt, arr.sq);
     }
 

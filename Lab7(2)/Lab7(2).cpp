@@ -7,6 +7,7 @@ int main()
     SetConsoleOutputCP(1251);
     srand(time(NULL));
     int mode;
+    int N;
     int variant;
 
     char fname[] = "file.txt";
