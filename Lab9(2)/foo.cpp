@@ -162,10 +162,10 @@ void add_to_begin() {
 	table* ptr = new table;
 	cout << "\nВведите вид транспорта и остальное:\n";
 	cin >> ptr->name >> ptr->type >> ptr->cnt >> ptr->sq;
-	ptr->prev = nullptr; // ďđĺäűäóůčé óęŕçŕňĺëü íŕ nullptr
-	ptr->next = head;// ńëĺäóţůčé óęŕçŕňĺëü íŕ ďĺđâűé ýëĺěĺíň
-	head->prev = ptr; // ďđĺäűäóůčé óęŕçŕňĺëü íŕ íîâűé óçĺë
-	head = ptr; // íîâűé óçĺë ńňŕíîâčňń˙ ăîëîâîé
+	ptr->prev = nullptr; // предыдущий указывает на nullptr
+	ptr->next = head;// первый элемент становится вторым
+	head->prev = ptr; // предыдущий указывает на íîâűé óçĺë
+	head = ptr; // первый элемент становится первым
 
 
 
@@ -182,9 +182,9 @@ void add_to_end() {
 	ptr = new table;
 	cout << "\nВведите вид транспорта и остальное:\n";
 	cin >> ptr->name >> ptr->type >> ptr->cnt >> ptr->sq;
-	previous->next = ptr; // ďđĺäűäóůčé óęŕçűâŕĺň íŕ ňĺęóůčé
-	ptr->prev = previous; // ňĺęóůčé óęŕçűâŕĺň íŕ ďđĺäűäóůčé
-	ptr->next = nullptr; // ęîíĺö ńďčńęŕ
+	previous->next = ptr; // предыдущий указывает на текущий
+	ptr->prev = previous; // текущий указывает на предыдущий
+	ptr->next = nullptr; // конец списка
 	tail = ptr;
 }
 void add_after_element()
@@ -199,17 +199,17 @@ void add_after_element()
 		if (strcmp(previous->name, name) == 0)
 		{
 			ptr = new table;
-			ptr->next = previous->next; // ńëĺäóţůčé óęŕçűâŕĺň íŕ ňĺęóůčé
-			previous->next->prev = ptr; // ňĺęóůčé óęŕçűâŕĺň íŕ ďđĺäűäóůčé
-			ptr->prev = previous; // ďđĺäűäóůčé óęŕçűâŕĺň íŕ íîâűé óçĺë
-			previous->next = ptr; // ďđĺäűäóůčé ńňŕíîâčňń˙ ňĺęóůčě
+			ptr->next = previous->next; // предыдущий указывает на текущий
+			previous->next->prev = ptr; // текущий указывает на предыдущий
+			ptr->prev = previous; // предыдущий указывает на íîâűé óçĺë
+			previous->next = ptr; // предыдущий становится текущим
 			cout << "\nВведите вид транспорта и остальное:\n";
 			cin >> ptr->name >> ptr->type >> ptr->cnt >> ptr->sq;
 			break;
 		}
 
-		previous = ptr; // ďđĺäűäóůčé ńňŕíîâčňń˙ ňĺęóůčě
-		ptr = ptr->next; // ňĺęóůčé ńňŕíîâčňń˙ ńëĺäóţůčě
+		previous = ptr; // предыдущий становится текущим
+		ptr = ptr->next; // текущий становится следующим
 
 	}
 }
@@ -271,18 +271,18 @@ void delete_element() {
 void sort() {
 	table* left = head;
 	table* right = head->next;
-	while (left->next) { // ďîęŕ íĺ äîřëč äî ęîíöŕ ńďčńęŕ
+	while (left->next) { // пока не дошли до конца списка
 		while (right) {
-			if ((strcmp(left->name, right->name) > 0)) { // ĺńëč ëĺâűé áîëüřĺ ďđŕâîăî ďî ŕëôŕâčňó
+			if ((strcmp(left->name, right->name) > 0)) { // если левый больше правого по алфавиту
 				swap(left->name, right->name);
 				swap(left->type, right->type);
 				swap(left->cnt, right->cnt);
 				swap(left->sq, right->sq);
 			}
-			right = right->next; // ďĺđĺőîäčě ę ńëĺäóţůĺěó ýëĺěĺíňó
+			right = right->next; // переходим к следующему элементу
 		}
-		left = left->next; // ďĺđĺőîäčě ę ńëĺäóţůĺěó ýëĺěĺíňó
-		right = left->next; // ďĺđĺőîäčě ę ńëĺäóţůĺěó ýëĺěĺíňó
+		left = left->next; // переходим к следующему элементу
+		right = left->next; // переходим к следующему элементу
 	}
 }
 void input_in_file() {
