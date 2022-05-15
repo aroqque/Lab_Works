@@ -42,7 +42,7 @@ int main(void)
     cout << "Изначальная матрица\n";
     print_matrix(matrix, size2);
     sort2(matrix, size2);
-
+    delete[]matrix, matrix = nullptr;
 
     #endif
 }
