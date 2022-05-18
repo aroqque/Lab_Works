@@ -6,7 +6,7 @@ void input(char* fname)
 	fopen_s(&f, fname, "w+b");
 	int a = 0;
 	for (int i = 0; i < 20; i++) {
-		a = rand() % 10 - 2;
+		a = rand() % 20 - 5;
 		fwrite(&a, sizeof(int), 1, f);
 	}
 	fclose(f);
@@ -60,10 +60,10 @@ void sort(char* fname) // Сортировка и поиск минимального элемента
 
 	for (int i = 0; i < 20; i++) {
 		fread(&x, sizeof(int), 1, f);
-		if (x < min) min = x, index = i;
+		if (x < min) min = x, index = i; // сохраняем индекс элемента чтобы записать на его место 999
 	}
 
-	cout << "min = " << min;
+	cout << "Минимальное значение = " << min;
 
 	fseek(f, 0, SEEK_SET);
 

@@ -165,12 +165,13 @@ void all_materials_print(char* fname)
     cout << ("|------------|------------|---------------|--------------|\n");
 
 
-    while (!feof(f))
+    while (!feof(f)) 
     {
-        fscanf(f, "%s  %s  %s  %s", &arr.name, &arr.sc, &arr.cnt, &arr.sq);
-         printf("| %-10s | %-10s | %-13s | %-12s |\n", arr.name, arr.sc, arr.cnt, arr.sq);
+            fscanf(f, "%s  %s  %s  %s", &arr.name, &arr.sc, &arr.cnt, &arr.sq);
+            if (feof(f)) break;
+            printf("| %-10s | %-10s | %-13s | %-12s |\n", arr.name, arr.sc, arr.cnt, arr.sq);
     }
-
+    
 
     cout << ("|--------------------------------------------------------|\n");
     cout << ("|     Примечание: Тр - трамвай,                          |\n");
