@@ -18,13 +18,13 @@ void create_list_by_hand()
 		else
 			head = ptr;
 		previous = ptr;
-		puts(" Чтобы выйти - <esc>");
+		puts(" Чтобы выйти - 'esc'");
 	} while (_getch() != 27);
 
 	tail = ptr;
 	tail->next = nullptr;
 }
-void create_list_random() {
+void create_list_by_random() {
 	table* ptr, * previous;
 
 	head = previous = ptr = new table;
@@ -236,7 +236,7 @@ void delete_last() {
 	free(ptr);
 
 }
-void delete_element() {
+void delete_such_element() {
 	table* ptr = head;
 	table* previous = nullptr;
 	char name[11];

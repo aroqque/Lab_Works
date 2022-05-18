@@ -26,7 +26,7 @@ table* create_list_by_hand()
 
 		cin >> ptr->name >> ptr->type >> ptr->cnt >> ptr->sq;
 
-		cout << "Заполнить ещё?(y/other key)\n";
+		cout << "Заполнить ещё?(Да = 'y'/ Нет = другое действие)\n";
 		c = _getch();
 		++N;
 	}
@@ -34,7 +34,7 @@ table* create_list_by_hand()
 	return head;
 }
 
-table* create_list_random() {
+table* create_list_by_random() {
 	table* ptr, * head, * previous;
 
 	head = previous = ptr = new table;
@@ -190,7 +190,7 @@ void delete_last(table** head) {
 	previous->next = nullptr;
 	delete ptr;
 }
-void delete_element(table** head) {
+void delete_such_element(table** head) {
 	table* ptr = *head;
 	table* previous = nullptr;
 	char name[11];

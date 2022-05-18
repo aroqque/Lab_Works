@@ -1,33 +1,40 @@
 ﻿#include "Header.h"
-
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    string str = "Добрый вечер! Как вы?";
-    const int target_len = 50; // указываем нужную нам длину 
 
-    string output;
-    switch (stretch(output, str, target_len))
+    for (;;)
     {
-    case 0:
-        cout << str << endl;
-        cout << output << endl;
-        break;
+        char* s = new char[length];
+        cout << "Введите строку: ";
+        if (!cin.getline(s, length))
+        {
+            error_length();
+            cout << "Строка с которой вы работаете: " << s << endl;
+        }
 
-    case 1:
-        cout << "Заданная длина строки меньше исходной длины\n";
-        break;
+        cout << "Исходная длина = " << getLength(s) << endl;
 
-    case 2:
-        cout << "Количество слов меньше двух\n";
-        break;
+        int lastUpdated = 0;
 
-    default:
-        cout << "Неизвестная ошибка\n";
-        break;
+        while (getLength(s) < length)
+        {
+            double_spaces(s, length);
+        }
+
+        cout << "Преобразованая строка: ";
+
+        for (int i = 0; i < getLength(s); i++)
+            cout << *(s + i);
+
+        cout << endl;
+
+        cout << "Итоговая длина = " << getLength(s) << endl;
+
+        cout << endl;
+
+        delete[] s;
     }
-
-
     return 0;
 }

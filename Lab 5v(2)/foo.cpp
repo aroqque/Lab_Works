@@ -3,9 +3,9 @@
 void print_menu()
 {
 	cout << "\n";
-	cout << "1. Use buble sorting\n";
-	cout << "2. Use shake sorting\n";
-	cout << "3. Exit\n";
+	cout << "1. Использовать buble сортировку\n";
+	cout << "2. Использовать shake сортировку\n";
+	cout << "3. Выход\n";
 	cout << "> ";
 }
 
@@ -15,7 +15,7 @@ int get_variant()
 	cin >> variant;
 	if (variant < 1 || variant > 3)
 	{
-		cout << "Enter number 1 - 3" << endl;
+		cout << "Введите число в промежутке от 1 до 3" << endl;
 		return 0;
 	}
 	else

@@ -7,7 +7,7 @@ int main()
 	srand(time(0));
 
 	int SIZE, variant;
-	cout << "Enter size of array\n";
+	cout << "Введите размер массива: \n";
 	cin >> SIZE;
 	int* array = new int[SIZE];
 

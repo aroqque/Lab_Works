@@ -1,68 +1,37 @@
 #include "Header.h"
-int count_words(const string& str) // считаем кол-во слов
+
+int getLength(char* str)
 {
-    int count = 0;
-
-    bool word = false;
-    for (int i = 0; i < str.size(); i++)
-    {
-        if (str[i] == ' ')
-        {
-            if (word)
-                count++;
-
-            word = false;
-        }
-        else
-            word = true;
-    }
-    if (word)
-        count++;
-
-    return count;
+    int i = 0;
+    while (str[i] != '\0')
+        i++;
+    return i;
 }
 
-
-int stretch(string& output, const string& input, const int target_size)
+void error_length()
 {
-    int istr_size = input.size();
-    if (istr_size < target_size) // case 1 check
-    {
-        const int quant_words = count_words(input);
-        if (quant_words > 1) // case 2 check
-        {
-            int quant_AddSpaces = target_size - istr_size; // сколько пробелов добавлять
-            int SpacBetweenTwoW = quant_AddSpaces / (quant_words - 1); // считаем сколько пробелов между каждыми словами поравну (-1 ибо после последнего слова не нужно)
-            int remainder = quant_AddSpaces - SpacBetweenTwoW * (quant_words - 1); // высчитаем остаток чтобы дополнять там где не удается поровну посчитать 
+    cout << "Вы превысили длину, строка была обрезана. " << endl;
+    cin.clear();
+    cin.ignore(256, '\n');
+}
 
-            bool word = false;
-            for (int i = 0; i < istr_size; i++) //реализация заполнения пробелами
-            {
-                output += input[i];
-                if (input[i] == ' ')
-                {
-                    if (word)
-                    {
-                        int add = 0;
-                        if (remainder > 0) // проверка остатка и реализация его добавления
-                        {
-                            add = 1;
-                            remainder--;
-                        }
-                        output.insert(output.size(), SpacBetweenTwoW + add, ' ');
-                    }
-
-                    word = false;
-                }
-                else
-                    word = true;
-            }
-        }
-        else
-            return 2;
+void add_space(char* str, size_t index, size_t n) {
+    if (n > length) {
+        cout << "Невозможно расширить массив." << endl;
     }
-    else
-        return 1;
+    for (auto i = n; i >= index; --i)
+        str[i] = str[i - 1];
+    str[index] = ' ';
+}
 
-    return 0;
+char* double_spaces(char* str, size_t n) {
+    for (int i = 0; i < n; i++)
+        if (str[i] == ' ' && str[i + 1] != ' ')
+        {
+            if (getLength(str) >= length)
+               break;
+
+            else add_space(str, i++, n);
+        }
+    return str;
 }

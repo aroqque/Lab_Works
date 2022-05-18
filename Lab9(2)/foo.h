@@ -21,7 +21,7 @@ struct table
 };
 
 void create_list_by_hand();
-void create_list_random();
+void create_list_by_random();
 void search_by_name(table* p, char* name);
 void search_by_type(table* p, char* type);
 void search_by_cnt(table* p, char* cnt);
@@ -34,6 +34,6 @@ void add_to_end();
 void add_after_element();
 void delete_first();
 void delete_last();
-void delete_element();
+void delete_such_element();
 void sort();
 void input_in_file();

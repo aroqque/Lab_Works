@@ -16,7 +16,7 @@ int main() {
 			break;
 
 		case 2:
-			head = create_list_random();
+			head = create_list_by_random();
 			system("cls");
 			break;
 
@@ -167,7 +167,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				delete_element(&head);
+				delete_such_element(&head);
 				system("pause");
 				system("cls");
 				break;

@@ -17,7 +17,7 @@ int main() {
 			break;
 
 		case 2:
-			create_list_random();
+			create_list_by_random();
 			system("cls");
 			break;
 
@@ -280,7 +280,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				delete_element();
+				delete_such_element();
 				system("pause");
 				system("cls");
 				break;

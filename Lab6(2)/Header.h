@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
-#include <string.h>
-#include <windows.h>
+#include <cstring>
+#include <string>
+#include <Windows.h>
 using namespace std;
-int count_words(const string& str);
-int stretch(string& output, const string& input, const int target_size);
+#define length 30
+int getLength(char* str);
+void error_length();
+void add_space(char* str, size_t index, size_t n);
+char* double_spaces(char* str, size_t n);
