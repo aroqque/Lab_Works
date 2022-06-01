@@ -6,7 +6,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 	int x = 0;
-	char fname[] = "text.txt";
+	char fname[] = "text.bin";
 
 	input(fname);
 	cout << "Вывод первого файла:\n";

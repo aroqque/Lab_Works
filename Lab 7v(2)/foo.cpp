@@ -12,7 +12,7 @@ void input(char* fname)
 	fclose(f);
 }
 
-void read(char* fname) // считывание и вывод bin файла
+void read(char* fname) // считывание и вывод файла
 {
 	FILE* f;
 	fopen_s(&f, fname, "r+b");

@@ -7,7 +7,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	char fname1[] = "text1.txt";
+	char fname1[] = "text1.bin";
 
 	int arr1[N];
 	int arr2[N];
